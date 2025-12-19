@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import type { Comic, ComicMetadata } from '@/types/comic'
 import { storage, STORAGE_KEYS } from '@/utils/storage'
 import { mockComics } from '@/utils/mockData'
-import { comicsToMetadata, metadataToComics, comicToMetadata } from '@/utils/comicStorage'
+import { comicsToMetadata, metadataToComics } from '@/utils/comicStorage'
 import { getDirectoryHandle, getAllDirectoryHandles } from '@/utils/directoryHandleStorage'
 import { reloadComicImages } from '@/utils/fileScanner'
 

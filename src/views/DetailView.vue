@@ -114,7 +114,7 @@ const comicStore = useComicStore()
 
 const comic = computed(() => comicStore.getComicById(route.params.id as string))
 
-const { continueReadingChapter, continueReadingPage } = useProgress(comic)
+const { continueReadingChapter, continueReadingPage } = useProgress(comic.value)
 
 // 章节分页相关
 const chapterPageSize = 20 // 每页显示的章节数

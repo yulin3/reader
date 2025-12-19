@@ -45,7 +45,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { Comic } from '@/types/comic'
 import { useProgress } from '@/composables/useProgress'
 
@@ -58,7 +57,7 @@ defineEmits<{
 }>()
 
 const { progressPercent, isRead, isReading, lastReadTime } = useProgress(
-  computed(() => props.comic)
+  props.comic
 )
 
 const formatTime = (timestamp: number) => {

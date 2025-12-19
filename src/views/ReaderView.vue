@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch, nextTick, type ComponentPublicInstance } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useReader } from '@/composables/useReader'
 import { useReaderStore } from '@/stores/reader'
@@ -160,7 +160,6 @@ const {
   images,
   allLoadedImages,
   currentPageIndex,
-  currentImage,
   currentGlobalIndex,
   isLoading,
   isLoadingNextChapter,
@@ -181,8 +180,8 @@ const scrollContainer = ref<HTMLElement | null>(null)
 const loadingIndicator = ref<HTMLElement | null>(null)
 const imageRefs = ref<(HTMLElement | null)[]>([])
 
-const setImageRef = (el: HTMLElement | null, index: number) => {
-  if (el) {
+const setImageRef = (el: Element | ComponentPublicInstance | null, index: number) => {
+  if (el && el instanceof HTMLElement) {
     imageRefs.value[index] = el
   }
 }

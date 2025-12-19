@@ -1,4 +1,4 @@
-import type { Comic, ComicMetadata, Chapter, ChapterMetadata } from '@/types/comic'
+import type { Comic, ComicMetadata, Chapter } from '@/types/comic'
 import { mockComics } from '@/utils/mockData'
 
 /**

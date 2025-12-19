@@ -50,7 +50,7 @@ export const useProgressStore = defineStore('progress', () => {
     return progressMap.value[comicId]
   }
 
-  const getProgressPercent = (comicId: string, totalChapters: number): number => {
+  const getProgressPercent = (comicId: string): number => {
     const progress = progressMap.value[comicId]
     if (!progress) return 0
 
