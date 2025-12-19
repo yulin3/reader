@@ -48,6 +48,61 @@ npm run build
 npm run preview
 ```
 
+## 部署到 GitHub Pages
+
+### 自动部署（推荐）
+
+项目已配置 GitHub Actions 工作流，可以自动部署到 GitHub Pages。
+
+#### 步骤：
+
+1. **启用 GitHub Pages**
+   - 进入仓库的 Settings → Pages
+   - Source 选择 "GitHub Actions"
+
+2. **推送代码到 main 分支**
+   ```bash
+   git push origin main
+   ```
+
+3. **等待部署完成**
+   - 在仓库的 Actions 标签页查看部署进度
+   - 部署完成后，访问 `https://<你的用户名>.github.io/<仓库名>/`
+
+#### 注意事项：
+
+- 首次部署可能需要几分钟时间
+- 如果仓库名称不是 `reader`，base 路径会自动根据仓库名称调整
+- 部署后，所有路由都会自动适配正确的 base 路径
+
+### 手动部署
+
+如果需要手动部署：
+
+1. **构建项目**
+   ```bash
+   # 设置 base 路径（替换 <仓库名> 为你的实际仓库名）
+   export VITE_BASE_PATH=/<仓库名>/
+   pnpm run build
+   ```
+
+2. **部署到 gh-pages 分支**
+   ```bash
+   # 安装 gh-pages（如果还没有）
+   npm install -g gh-pages
+   
+   # 部署
+   gh-pages -d dist
+   ```
+
+### 自定义域名
+
+如果使用自定义域名：
+
+1. 在 `vite.config.ts` 中设置 `base: '/'`
+2. 在仓库根目录创建 `CNAME` 文件，内容为你的域名
+3. 在 DNS 设置中添加 CNAME 记录指向 `你的用户名.github.io`
+
 ## 使用说明
 
 ### 默认漫画数据

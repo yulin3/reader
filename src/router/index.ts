@@ -4,7 +4,7 @@ import DetailView from '@/views/DetailView.vue'
 import ReaderView from '@/views/ReaderView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
