@@ -56,9 +56,17 @@ npm run preview
 
 #### 步骤：
 
-1. **启用 GitHub Pages**
-   - 进入仓库的 Settings → Pages
-   - Source 选择 "GitHub Actions"
+1. **启用 GitHub Pages（重要！）**
+   - 进入 GitHub 仓库页面
+   - 点击 **Settings**（设置）标签
+   - 在左侧菜单中找到 **Pages**（页面）
+   - 在 **Source**（源）部分，选择 **GitHub Actions**
+   - 保存设置
+
+   > ⚠️ **注意**：如果看不到 Pages 选项，可能是因为：
+   > - 仓库是私有的（需要 GitHub Pro 或组织账户）
+   > - 仓库设置中禁用了 Pages 功能
+   > - 需要仓库管理员权限
 
 2. **推送代码到 main 分支**
    ```bash
@@ -66,7 +74,8 @@ npm run preview
    ```
 
 3. **等待部署完成**
-   - 在仓库的 Actions 标签页查看部署进度
+   - 在仓库的 **Actions** 标签页查看部署进度
+   - 如果看到 "Setup Pages" 步骤失败，说明 Pages 还未启用，请返回步骤 1
    - 部署完成后，访问 `https://<你的用户名>.github.io/<仓库名>/`
 
 #### 注意事项：
@@ -74,6 +83,7 @@ npm run preview
 - 首次部署可能需要几分钟时间
 - 如果仓库名称不是 `reader`，base 路径会自动根据仓库名称调整
 - 部署后，所有路由都会自动适配正确的 base 路径
+- 如果遇到 "Get Pages site failed" 错误，请确保已按照步骤 1 正确启用 GitHub Pages
 
 ### 手动部署
 
