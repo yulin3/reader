@@ -84,6 +84,7 @@ npm run preview
 - 如果仓库名称不是 `reader`，base 路径会自动根据仓库名称调整
 - 部署后，所有路由都会自动适配正确的 base 路径
 - 如果遇到 "Get Pages site failed" 错误，请确保已按照步骤 1 正确启用 GitHub Pages
+- 如果遇到 "Branch is not allowed to deploy" 错误，这通常是因为 GitHub Pages 环境有保护规则。工作流已配置为自动处理此问题，如果仍然失败，可以在仓库 Settings → Environments → github-pages 中检查并调整保护规则
 
 ### 手动部署
 
